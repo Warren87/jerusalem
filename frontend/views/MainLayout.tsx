@@ -7,6 +7,7 @@ import { useAuth } from 'Frontend/util/auth.js';
 import { useRouteMetadata } from 'Frontend/util/routing.js';
 import { Suspense, useEffect } from 'react';
 import { NavLink, Outlet } from 'react-router-dom';
+import {auth} from "Frontend/generated/endpoints";
 
 const navLinkClasses = ({ isActive }: any) => {
   return `block rounded-m p-s ${isActive ? 'bg-primary-10 text-primary' : 'text-body'}`;
@@ -14,16 +15,11 @@ const navLinkClasses = ({ isActive }: any) => {
 
 export default function MainLayout() {
   const currentTitle = useRouteMetadata()?.title ?? 'My App';
+  const { state, logout } = useAuth();
+
   useEffect(() => {
     document.title = currentTitle;
   }, [currentTitle]);
-
-  const { state, logout } = useAuth();
-  const profilePictureUrl =
-    state.user &&
-    `data:image;base64,${btoa(
-      state.user.profilePicture.reduce((str, n) => str + String.fromCharCode((n + 256) % 256), '')
-    )}`;
   return (
     <AppLayout primarySection="drawer">
       <div slot="drawer" className="flex flex-col justify-between h-full p-m">
@@ -46,7 +42,7 @@ export default function MainLayout() {
           {state.user ? (
             <>
               <div className="flex items-center gap-s">
-                <Avatar theme="xsmall" img={profilePictureUrl} name={state.user.name} />
+                <Avatar theme="xsmall"  name={state.user.name} />
                 {state.user.name}
               </div>
               <Button onClick={async () => logout()}>Sign out</Button>

@@ -1,9 +1,9 @@
 import { protectRoutes } from '@hilla/react-auth';
 import HelloWorldView from 'Frontend/views/helloworld/HelloWorldView.js';
-import LoginView from 'Frontend/views/login/LoginView.js';
 import MainLayout from 'Frontend/views/MainLayout.js';
 import { lazy } from 'react';
 import { createBrowserRouter, RouteObject } from 'react-router-dom';
+import OAuth2LoginView from "Frontend/views/login/OAuth2LoginView";
 
 const AboutView = lazy(async () => import('Frontend/views/about/AboutView.js'));
 
@@ -16,7 +16,7 @@ export const routes = protectRoutes([
       { path: '/about', element: <AboutView />, handle: { title: 'About', requiresLogin: true } },
     ],
   },
-  { path: '/login', element: <LoginView /> },
+  { path: '/login', element: <OAuth2LoginView /> },
 ]) as RouteObject[];
 
 export default createBrowserRouter(routes);

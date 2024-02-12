@@ -42,3 +42,4 @@ out/
 
 # Contains secrets that shouldn’t go into the repository
 config/secrets/
+.env

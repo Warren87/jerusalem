@@ -1,7 +1,7 @@
-import { configureAuth } from '@hilla/react-auth';
-import { UserEndpoint } from 'Frontend/generated/endpoints';
+import {configureAuth} from '@hilla/react-auth';
+import {auth} from "Frontend/generated/endpoints";
 
-const auth = configureAuth(UserEndpoint.getAuthenticatedUser);
+const authModule = configureAuth(auth.authenticatedUser);
 
-export const useAuth = auth.useAuth;
-export const AuthProvider = auth.AuthProvider;
+export const useAuth = authModule.useAuth;
+export const AuthProvider = authModule.AuthProvider;

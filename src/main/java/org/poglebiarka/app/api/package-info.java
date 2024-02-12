@@ -1,4 +1,4 @@
 @NonNullApi
-package com.example.application.data;
+package org.poglebiarka.app.api;
 
 import org.springframework.lang.NonNullApi;

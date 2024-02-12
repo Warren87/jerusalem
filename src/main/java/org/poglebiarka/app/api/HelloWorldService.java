@@ -1,12 +1,10 @@
-package com.example.application.services;
+package org.poglebiarka.app.api;
 
 import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.BrowserCallable;
-import org.springframework.stereotype.Service;
 
 @BrowserCallable
 @AnonymousAllowed
-@Service
 public class HelloWorldService {
 
     public String sayHello(String name) {
