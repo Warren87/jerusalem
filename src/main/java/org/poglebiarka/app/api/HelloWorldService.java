@@ -1,12 +1,12 @@
 package org.poglebiarka.app.api;
 
-import com.vaadin.flow.server.auth.AnonymousAllowed;
 import dev.hilla.BrowserCallable;
+import jakarta.annotation.security.PermitAll;
 
 @BrowserCallable
-@AnonymousAllowed
 public class HelloWorldService {
 
+    @PermitAll
     public String sayHello(String name) {
         if (name.isEmpty()) {
             return "Hello stranger";
