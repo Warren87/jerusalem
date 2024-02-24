@@ -1,6 +1,6 @@
 import {VerticalLayout} from "@hilla/react-components/VerticalLayout";
 import {ConfirmDialog} from "@hilla/react-components/ConfirmDialog";
-import NotificationRequest from "Frontend/generated/org/poglebiarka/app/notifications/NotificationRequest";
+import NotificationRequest from "Frontend/generated/org/poglebiarka/admin/notifications/NotificationRequest";
 
 interface NotificationConfirmProps {
     dialogOpened: boolean;

@@ -2,12 +2,12 @@ import {FormLayout} from "@hilla/react-components/FormLayout";
 import {TextField} from "@hilla/react-components/TextField.js";
 import {TextArea} from "@hilla/react-components/TextArea";
 import {useForm} from "@hilla/react-form";
-import NotificationRequestModel from "Frontend/generated/org/poglebiarka/app/notifications/NotificationRequestModel";
+import NotificationRequestModel from "Frontend/generated/org/poglebiarka/admin/notifications/NotificationRequestModel";
 import {Button} from "@hilla/react-components/Button.js";
 import {useState} from "react";
 import NotificationConfirmDialog from "Frontend/views/notifications/NotificationConfirmDialog";
-import NotificationRequest from "Frontend/generated/org/poglebiarka/app/notifications/NotificationRequest";
-import Link from "Frontend/generated/org/poglebiarka/app/notifications/Link";
+import NotificationRequest from "Frontend/generated/org/poglebiarka/admin/notifications/NotificationRequest";
+import Link from "Frontend/generated/org/poglebiarka/admin/notifications/Link";
 import {NotificationEndpoint} from "Frontend/generated/endpoints";
 import {Notification} from "@hilla/react-components/Notification";
 
@@ -30,7 +30,6 @@ export default function NotificationsView() {
         closeDialog()
         Notification.show(`Notification [${request.mainTitle}] sent`);
     }
-
 
     const {field, model, submit, invalid} = useForm(NotificationRequestModel, {onSubmit})
 
